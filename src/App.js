@@ -1,28 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Saludo from "./components/saludo/saludo";
+import Despedida from "./components/Despedida/Despedida";
+import Bienvenida from "./components/Bienvenida/Bienvenida";
+import Reloj from "./components/Reloj/Reloj";
+import Cards from "./components/Cards/Cards";
+import { useState } from "react";
 
-function App() {
+const App = () => {
 
-  
+  const [totalLlamadas, setTotalLlamadas] = useState(0)
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const aumentoLlamadas = () => {
+    setTotalLlamadas(totalLlamadas + 1)
+  }
+  const user = 'LALALA';
+
+  const profesionales = [
+    {
+      id: 1,
+      nombre: 'Rodrigo Navarrete',
+      profesion: 'Profesor de Ingles'
+    },
+    {
+     id: 2,
+      nombre: 'Karen Vidal',
+      profesion: 'Pochocha'
+    }
+  ]
+
+ return(
+  <div className="container">
+    <Saludo name={user}/>
+    <Despedida />
+    {profesionales.map((profesional) => <Bienvenida datos={profesional} key={profesional.id}/>)}
+    <Reloj />
+    {profesionales.map((profesional) => <Cards datos={profesional} key={profesional.id} aumento={aumentoLlamadas} state={totalLlamadas}/>)}
+    
+  </div>
+ ) 
 }
 
 export default App;
