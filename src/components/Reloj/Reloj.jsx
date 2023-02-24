@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { Component, useState } from "react";
 import FechaEnFormato from "../FechaEnFormato/FechaEnFormato";
 
 const Reloj = () => {
-    const [state, serState] = useState({
+    const [state, setState] = useState({
         fecha: new Date()
     })
 
     setInterval(() => {
-        serState({ fecha: new Date()})
+        setState({ fecha: new Date()})
     }, 1000)
 
   return (
