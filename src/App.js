@@ -7,8 +7,8 @@
 // import Button from 'react-bootstrap/Button'
 //*********                 Pruebas 2               *************/
 
-// Inicio, Nosotros, Locales, Tienda Online, Contacto y telefonos -----
-// Header, Footer, Formulario y Reserva, Catalogo -------
+// Rutas: Inicio, Nosotros, Locales, Tienda Online, Contacto y telefonos -----
+// Importantes: Header, Footer, Formulario y Reserva, Catalogo -------
 // Hora en pagina
 
 import './App.css';
