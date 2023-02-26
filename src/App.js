@@ -12,13 +12,13 @@
 // Hora en pagina
 
 import './App.css';
-import Rutas from '.routes/Rutas/Rutas'
+import Rutas from './routes/Rutas/Rutas'
 
 const App = () => {
   return(
-    <div>
+    <>
       <Rutas />
-    </div>
+    </>
   );
 }
 
