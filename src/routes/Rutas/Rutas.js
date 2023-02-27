@@ -7,6 +7,7 @@ import Locales from '../../pages/Locales/Locales'
 import Contacto from '../../pages/Contacto/Contacto'
 import Reservas from '../../pages/Reservas/Reservas'
 import Users from '../../pages/Admin/Users/Users'
+import Product from '../../pages/Catalogo/Product'
 
 
 const Rutas = () => {
@@ -21,6 +22,7 @@ const Rutas = () => {
                     <Route path='/contacto' element={<Contacto />}/>
                     <Route path='/catalogo' element={<Catalogo />}/>
                     <Route path='/admin/users' element={<Users />}/>
+                    <Route path='/catalogo/catalogoId' element={<Product />}/>
                 </Route>
             </Routes>
         </>

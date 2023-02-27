@@ -1,4 +1,4 @@
-import {Nav,Navbar} from 'react-bootstrap';
+import {Nav,Navbar,NavDropdown} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
@@ -27,8 +27,9 @@ const Navigation = () => {
             <Nav.Link as={NavLink} to="/reservas">Reservas</Nav.Link>
             <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
             <Nav.Link as={NavLink} to="/catalogo"><Button variant="warning">Catalogo</Button></Nav.Link>
-            <Nav.Link as={NavLink} to="/admin/users">Admin</Nav.Link>
-
+            <NavDropdown title='Admin'>
+              <NavDropdown.Item as={NavLink} to="/admin/users">Users</NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse >
     </Navbar>

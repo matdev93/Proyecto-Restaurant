@@ -1,4 +1,8 @@
-import './Catalogo.css'
+
+import Button from 'react-bootstrap/Button';
+import {Card, Col, Row } from 'react-bootstrap';
+import axios from 'axios';
+import {useState, useEffect} from 'react'
 
 // var productos =[
 //     {id: 1, grupo: 'Tortas y Pasteles', titulo: 'Torta Amor',  descripcion: 'La torta amor es una exquisita preparación de hojarasca con relleno de manjar, crema pastelera y mermelada de frambuesa.', precio: '$23.000', url: 'https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=401&q=80'},
@@ -28,10 +32,38 @@ import './Catalogo.css'
 
 // ];
 
-const Catalogo = (grupo) => {
-    return(
+const Catalogo = () => {
+
+    const [catalogo,setCatalogo] = useState([])
+
+    useEffect (() => {
+        const getCatalogo = async() => {
+            const response = await axios('https://fakestoreapi.com/products');
+            const data = await response.data;
+            setCatalogo(data)
+        }
+        getCatalogo();
+    }, [])
+
+    return (
         <div>
-            Catalogo
+            <h1>Productos</h1>
+            <Row xs={1} md={2} className="g-4">
+                {catalogo.map((catalogo) => (
+                    <Col key={catalogo.id}>
+                        <Card>
+                            <Card.Img variant="top" src={catalogo.image} alt="..." style={{width: '250px'}}/>
+                            <Card.Body>
+                                <Card.Title>{catalogo.title}</Card.Title>
+                                <Card.Text>
+                                    {catalogo.description}
+                                </Card.Text>
+                            </Card.Body>
+                            <Button variant='warning'> Agregar </Button>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
         </div>
     )
 }
