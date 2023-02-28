@@ -1,11 +1,13 @@
 import './Footer.css'
 import { Link } from 'react-router-dom';
+import { Col, Row } from 'react-bootstrap';
 
 const Footer = () => {
   return (
     <div className='footer'>
-      <div class="row">
-        <div class="enlaces1 col-12 col-md-3">
+      <Row></Row>
+      <div>
+        <div className="enlaces1 col-12 col-md-3">
           <div>
             <h3>Pastelería</h3>
             <ul>
@@ -15,58 +17,62 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div class="enlaces2 col-12 col-md-3">
+        <div className="enlaces2 col-12 col-md-3">
           <h3>Ayuda</h3>
           <ul>
             <li>
-              <a href="#">Tienda Online</a>
+              Tienda Online
             </li>
             <li>
-              <a href="#">Certificaciones</a>
+              Certificaciones
             </li>
             <li>
-              <a href="#">Banqueteria</a>
+              Banqueteria
             </li>
           </ul>
         </div>
-      <div class="enlaces3 col-12 col-md-3">
+      <div className="enlaces3 col-12 col-md-3">
         <div>
           <h3>Nosotros</h3>
           <ul>
             <li>
-              <a href="#">About</a>
+              About
             </li>
             <li>
-              <a href="#">Blog</a>
+              Blog
             </li>
             <li>
-              <a href="#">Trabajos</a>
+              Trabajos
             </li>
             <li>
-              <a href="#">Prensa</a>
+              Prensa
             </li>
             <li>
-              <a href="#">Partners</a>
+              Partners
             </li>
           </ul>
         </div>
         </div>
-        <div class="enlaces4 col-12 col-md-3">
+        <div className="enlaces4 col-12 col-md-3">
           <h3>Legal</h3>
           <ul>
             <li>
-              <a href="#">Privacidad</a>
+              Privacidad
             </li>
             <li>
-              <a href="#">Términos</a>
+              Términos
             </li>
           </ul>
         </div>
       </div>
-      <div className="copyright">
-      <p>  © 2023. Todos los derechos reservados. Esta es una página de aterrizaje ficticia para fines académicos.</p>
-      </div>
+        
+      <Row><Col><div >
+        <p>  © 2023. Todos los derechos reservados. Esta es una página de aterrizaje ficticia para fines académicos.</p>
+        </div>
+        </Col>
+        </Row>
     </div>
+    
  
   )
 };

@@ -6,3 +6,9 @@
 .titulo {
     text-align: center;
 }
+
+.cartas{
+    display: grid;
+    padding-left: 5rem;
+
+}
