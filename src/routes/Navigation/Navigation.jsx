@@ -1,4 +1,4 @@
-import {Nav,Navbar,NavDropdown} from 'react-bootstrap';
+import {Nav,Navbar,} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 
@@ -22,14 +22,14 @@ const Navigation = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={NavLink} to="/">Inicio</Nav.Link>
-            <Nav.Link as={NavLink} to="/nosotros">Nosotros</Nav.Link>
-            <Nav.Link as={NavLink} to="/locales">Locales</Nav.Link>
+            {/* <Nav.Link as={NavLink} to="/nosotros">Nosotros</Nav.Link>
+            <Nav.Link as={NavLink} to="/locales">Locales</Nav.Link> */}
             <Nav.Link as={NavLink} to="/reservas">Reservas</Nav.Link>
-            <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link>
+            {/* <Nav.Link as={NavLink} to="/contacto">Contacto</Nav.Link> */}
             <Nav.Link as={NavLink} to="/catalogo"><Button variant="warning">Catalogo</Button></Nav.Link>
-            <NavDropdown title='Admin'>
+            {/* <NavDropdown title='Admin'>
               <NavDropdown.Item as={NavLink} to="/admin/users">Users</NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
         </Navbar.Collapse >
     </Navbar>

@@ -7,8 +7,8 @@
     text-align: center;
 }
 
-.cartas{
+.tarjetas{
     display: grid;
-    padding-left: 5rem;
+    padding: 3rem ;
 
 }

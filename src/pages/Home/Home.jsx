@@ -1,14 +1,14 @@
 import Carousel from 'react-bootstrap/Carousel';
 import Button from 'react-bootstrap/Button';
-import {Card, Col, Row } from 'react-bootstrap';
+import {Card, Col, Row, Container} from 'react-bootstrap';
 import './Home.css'
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
     <div>
-      <Row >
-        <Col><div className='col-12'><h2 className='titulo'>Cafe Für Elise</h2></div>
+      
+        <Col><div className='col-12'><h2 className='titulo'>Kaffee Für Elise</h2></div>
         <div>
         <Carousel className='carrucel text-center'>
           <Carousel.Item >
@@ -36,52 +36,59 @@ const Home = () => {
         </Carousel>
       </div>
       
-      <div>
-        <h1>Sabores con tradiciones alemanas</h1>
-      <div className='Cartas'>
-      <Card style={{ width: '18rem' , height: '20rem' }}>
-        <Card.Img variant="top" src="https://images.unsplash.com/photo-1579306194872-64d3b7bac4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=817&q=80" />
-        <Card.Body>
-          <Card.Title>Tortas y Pasteles</Card.Title>
-          <Card.Text>
-          Deliciosas tortas y pasteles con la más tradición alemana con ingredientes seleccionados por un equipo apasionado por su cocina tradicional.
-
-Para más detalle ingresar a nuestro catalogo con muchas variedades:
-          </Card.Text>
-          <Button variant="warning">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: '18rem' , height: '20rem' }}>
-        <Card.Img variant="top" src="https://images.unsplash.com/photo-1561339405-e1dd0d129449?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" />
-        <Card.Body>
-          <Card.Title>Kuchenes</Card.Title>
-          <Card.Text>
-           Kuchenes con recetas transcurridas de generacion en generacion y ahora llegada a nuestros clientes para que puedan disfrutar de un sabor único e irrepetible.
-
-Para más detalle ingresar a nuestro catalogo con muchas variedades:
-          </Card.Text>
-          <Button variant="warning">Go somewhere</Button>
-        </Card.Body>
-      </Card>
-      <Card style={{ width: '18rem' , height: '20rem' }}>
-        <Card.Img variant="top" src="https://images.unsplash.com/photo-1576437957780-1f21b8bcdbde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80s" />
-        <Card.Body>
-          <Card.Title>Strudel y más</Card.Title>
-          <Card.Text>
-          Pretzel, Apfelstrudel, Bavaroise y más productos de la cocina germana.
-
-Para más detalle ingresar a nuestro catalogo con muchas variedades:
-          </Card.Text>
-          <Button variant="warning"><Link to='/catalogo'>Ir a catalogo</Link></Button>
-        </Card.Body>
-      </Card>
-      </div>
+      <div className='tarjetas'>
+       <Col style={{textAlign: 'center'}}><h1>Sabores con tradiciones alemanas</h1></Col>
+        <Container>
+          <Row className="justify-content-md-center p-5">
+            <Col xs lg="3">
+            <Card style={{ width: '18rem' , height: '31rem' }}>
+              <Card.Img variant="top" src="https://images.unsplash.com/photo-1579306194872-64d3b7bac4c2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=817&q=80" />
+              <Card.Body>
+                <Card.Title>Tortas y Pasteles</Card.Title>
+                <Card.Text>
+                Deliciosas tortas y pasteles con la más tradición alemana con ingredientes seleccionados por un equipo apasionado por su cocina tradicional. Para más detalle ingresar a nuestro catalogo con muchas variedades:
+                </Card.Text>
+                <Button variant="warning"><Link to='/catalogo'>Ir a catalogo</Link></Button>
+              </Card.Body>
+            </Card>
+            </Col>
+            <Col xs lg="1"></Col>
+            <Col xs lg="3">
+            <Card style={{ width: '18rem' , height: '31rem' }}>
+              <Card.Img variant="top" src="https://images.unsplash.com/photo-1561339405-e1dd0d129449?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1974&q=80" />
+              <Card.Body>
+                <Card.Title>Kuchenes</Card.Title>
+                <Card.Text>
+                Kuchenes con recetas transcurridas de generacion en generacion y ahora llegada a nuestros clientes para que puedan disfrutar de un sabor único e irrepetible. Para más detalle ingresar a nuestro catalogo con muchas variedades:
+                </Card.Text>
+                <Button variant="warning"><Link to='/catalogo'>Ir a catalogo</Link></Button>
+              </Card.Body>
+            </Card>
+            </Col>
+            <Col xs lg="1"></Col>
+            <Col xs lg="3">
+            <Card style={{ width: '18rem' , height: '31rem' }}>
+              <Card.Img variant="top" src="https://images.unsplash.com/photo-1576437957780-1f21b8bcdbde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80s" />
+                <Card.Body>
+                  <Card.Title>Strudel y más</Card.Title>
+                  <Card.Text>
+                    Pretzel, Apfelstrudel, Bavaroise y más productos de la cocina germana. Para más detalle ingresar a nuestro catalogo con muchas variedades:
+                  </Card.Text>
+                  <Button variant="warning"><Link to='/catalogo'>Ir a catalogo</Link></Button>
+                </Card.Body>
+              </Card>
+        </Col>
+      </Row>
+    </Container>
     </div>
     </Col>
-    </Row>
+    
   </div>
   )
 }
 
 
 export default Home;
+
+
+ 
