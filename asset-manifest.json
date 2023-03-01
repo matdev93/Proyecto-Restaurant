@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Proyecto-Restaurant/static/css/main.aef60f2c.css",
+    "main.js": "/Proyecto-Restaurant/static/js/main.e32114e6.js",
+    "index.html": "/Proyecto-Restaurant/index.html",
+    "main.aef60f2c.css.map": "/Proyecto-Restaurant/static/css/main.aef60f2c.css.map",
+    "main.e32114e6.js.map": "/Proyecto-Restaurant/static/js/main.e32114e6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.aef60f2c.css",
+    "static/js/main.e32114e6.js"
+  ]
+}
