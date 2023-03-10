@@ -1,13 +1,32 @@
 
 import Button from 'react-bootstrap/Button';
 import {Card, Col, Row, Container} from 'react-bootstrap';
+import { useState, useEffect } from 'react';
+import { db } from '../../pages/Config/Firebase';
+import { collection, getDocs } from 'firebase/firestore';
 
 
+const CardReserve = () => {
+  const [reserva, setReserva] = useState([])
+  useEffect (() => {
+  const getReserva = async() => {
+      try{
+      const collectionRef= collection(db, 'reservas')
+      const response = await getDocs(collectionRef)
 
-
-const CardReserve = ({reservas}) => {
-
-  console.log(reservas)
+      const docs = response.docs.map((doc)=>{
+          const data=doc.data() //firestore guarda la info de cada documento en data()
+          data.id=doc.id
+          return data
+      })
+      setReserva(docs);
+      }catch(error){
+          console.log(error)
+      }
+  }
+  getReserva()
+  },[])
+  console.log(reserva);
 
   return (
     <div>
@@ -15,7 +34,7 @@ const CardReserve = ({reservas}) => {
        <Col style={{textAlign: 'center'}}><h1>Reservas Actuales:</h1></Col>
         <Container>
           <Row className="justify-content-md-center p-5">
-            {reservas.map(reserva =>(
+            {reserva.map(reserva =>(
               <Col xs lg="2" key={reserva.id}>
               <Card>
                 <Card.Body>

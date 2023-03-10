@@ -1,6 +1,6 @@
 
 import Button from 'react-bootstrap/Button';
-import {Card } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import {useState, useEffect} from 'react'
 import { db } from '../Config/Firebase';
 import { collection, getDocs } from 'firebase/firestore';
@@ -9,12 +9,12 @@ import  { Row } from 'react-bootstrap';
 
 const Catalogo = () => {
 
-    const [catalogo,setCatalogo] = useState([])
+    const [catalogo, setCatalogo] = useState([])
 
     useEffect (() => {
         const getCatalogo = async() => {
             try {
-            const collectionRef = collection (db,'Menu');
+            const collectionRef = collection (db,'Catalogo');
             const response = await getDocs(collectionRef);
 
             const docs= response.docs.map((doc) => {
@@ -37,15 +37,20 @@ const Catalogo = () => {
         <div>
             <h1>Productos</h1>
             <Row xs={1} md={2} className="g-4">
-             
-                    <Card key={catalogo.id}>
-                        <Card.Img variant="top" src={catalogo.image} alt={catalogo.name} style={{width: '250px'}}/>
-                        <Card.Body>
-                            <Card.Title>{catalogo.name}</Card.Title>
-                            <Card.Text>{catalogo.description}</Card.Text>
-                        </Card.Body>
-                        <Button variant='warning'> {catalogo.price} </Button>
-                    </Card>
+              {catalogo.map(producto => (<div key={producto.id}>{ producto.Tortas.map(torta => (
+                <Card key={torta.name}>
+                <Card.Img variant="top" src={torta.image} alt={torta.name} style={{width: '250px'}}/>
+                <Card.Body>
+                    <Card.Title>{torta.name}</Card.Title>
+                    <Card.Text>{torta.description}</Card.Text>
+                </Card.Body>
+                <Button variant='warning'> {torta.price} </Button>
+                </Card>
+              ))
+               
+    } </div>
+    ))}
+                   
                 
             </Row>
         </div>

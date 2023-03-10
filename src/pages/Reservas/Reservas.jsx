@@ -8,25 +8,6 @@ import CardReserve from '../../components/CardReserve/CardReserve';
 
 const Reservas = () => {
   const [reserva, setReserva] = useState([])
-        useEffect (() => {
-        const getReserva = async() => {
-            try{
-            const collectionRef= collection(db, 'Reservas')
-            const response = await getDocs(collectionRef)
-    
-            const docs = response.docs.map((doc)=>{
-                const data=doc.data() //firestore guarda la info de cada documento en data()
-                data.id=doc.id
-                return data
-            })
-            setReserva(docs);
-            }catch(error){
-                console.log(error)
-            }
-        }
-        getReserva()
-        },[])
-        console.log(reserva);
 
     const valoresIniciales={
         fecha:'',
@@ -58,7 +39,7 @@ const Reservas = () => {
           console.log(error)
       }
       setUser({...valoresIniciales})
-      await window.location.reload(true)
+      return window.location.reload(true)
     }
   return (
     <div>
@@ -120,7 +101,7 @@ const Reservas = () => {
       </fieldset>
     </Form>
     
-    <CardReserve reservas={reserva} setReserva={setReserva}/>
+    <CardReserve />
 </div>
   )
 }
