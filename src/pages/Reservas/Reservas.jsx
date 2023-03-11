@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { db } from '../Config/Firebase';
-import { collection, getDocs, addDoc} from 'firebase/firestore';
+import { collection, addDoc} from 'firebase/firestore';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import CardReserve from '../../components/CardReserve/CardReserve';
 
 
 const Reservas = () => {
-  const [reserva, setReserva] = useState([])
+  // const [reserva, setReserva] = useState([])
 
     const valoresIniciales={
         fecha:'',
