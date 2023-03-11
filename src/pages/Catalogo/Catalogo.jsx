@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 import { useState, useEffect } from 'react'
 import { db } from '../Config/Firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import { Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 
 const Catalogo = () => {
