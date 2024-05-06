@@ -1,10 +1,8 @@
 import './catalogo.css'
 import Button from 'react-bootstrap/Button';
-import { Card } from 'react-bootstrap';
 import { useState, useEffect } from 'react'
 import { db } from '../Config/Firebase';
 import { collection, getDocs } from 'firebase/firestore';
-import { Col } from 'react-bootstrap';
 
 
 const Catalogo = () => {
@@ -35,23 +33,23 @@ const Catalogo = () => {
     console.log(catalogo)
     return (
         <div>
-            <h1>Productos</h1>
-            <Col xs={1} md={3} className="g-4 tarjeta">
+            <h1 className='catalogo__titulo'>Productos</h1>
+            <div className='catalogo'>
                 {catalogo.map(producto => (
-                    <div key={producto.id}>{producto.Tortas.map(torta => (
-                        <Card key={torta.name}>
-                            <Card.Img variant="top" src={torta.image} alt={torta.name} style={{ width: '250px' }} />
-                            <Card.Body>
-                                <Card.Title>{torta.name}</Card.Title>
-                                <Card.Text>{torta.description}</Card.Text>
-                            </Card.Body>
+                    <div className='tarjeta' key={producto.id}>{producto.Tortas.map(torta => (
+                        <div key={torta.name} className='tarjeta__contenedor'>
+                            <img variant="top" src={torta.image} alt={torta.name} className='tarjeta__imagen'/>
+                            <div className='tarjeta__informacion'>
+                                <p className='tarjeta__nombre'>{torta.name}</p>
+                                <p className='tarjeta__descripcion'>{torta.description}</p>
+                            </div>
                             <Button variant='warning'> {torta.price} </Button>
-                        </Card>
+                        </div>
                     ))
                     }
                     </div>
                 ))}
-            </Col>
+            </div>
         </div>
     )
 }
